@@ -1,0 +1,116 @@
+.cont{
+    width: 1300px;
+    height: 78px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.logo_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.logo_img{
+    width: 43px;
+    height: 35.457px;
+    flex-shrink: 0;
+}
+.vert_line{
+    background: #FFF;
+    width: 1px;
+    height: 27px;
+}
+.logo_p{
+    width: 130px;
+    height: 25px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: Geist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+.right_side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.reg_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_btn {
+    background-color: transparent;
+    border: none;
+    color: #59D87B;
+font-family: Involve;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+}
+.right_p{
+    color: #FFF;
+    font-family: Involve;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.reg_btn{
+    background-color: transparent;
+    border: none;
+    color: #59D87B;
+font-family: Involve;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.tg{
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    
+    background-size: cover; /* Покроет весь блок картинкой */
+    background-position: center; /* Центрирование картинки */
+    background-repeat: no-repeat; /* Запрет повторения картинки */
+}
+.change_language_btn{
+    gap: 11px;
+    width: 84px;
+height: 36px;
+flex-shrink: 0;border-radius: 40px;
+border: 1px solid #FFF;
+background: #1C1C1C;
+color: #49D46F;
+font-family: Involve;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vector_language{
+    width: 12px;
+    height: 6px;
+    flex-shrink: 0;
+}
+.line{
+    position: absolute;
+    width: 1300px;
+    height: 1px;
+    background: #909090;
+    bottom: 0;
+}

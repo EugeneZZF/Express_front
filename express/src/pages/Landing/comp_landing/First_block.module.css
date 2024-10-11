@@ -1,0 +1,103 @@
+.cont{
+    width: 100%;
+    height: 660px;
+    background: #1C1C1C;
+    display: flex; flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.section{
+    width: 830px;
+    height: 384px;
+    /* background: white; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+.section_first_line{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+.h1_section{
+    width: 637px;
+    height: 125px;
+    flex-shrink: 0;
+    color: #E2E2E2;
+    font-family: "Halvar Breitschrift";
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    
+}
+.section_second_line{
+    width: 818px;
+    height: 150px;
+    background-size: cover; /* Покроет весь блок картинкой */
+    background-position: center; /* Центрирование картинки */
+    background-repeat: no-repeat;  
+    color: #FFF;
+    font-family: "Halvar Breitschrift";
+    display: flex;
+    align-items: center;
+}
+.section_second_line_p{
+    margin-left: 30px;
+    transform: rotate(2deg);
+    color: var(--icon-color, #FFF);
+font-family: "Halvar Breitschrift";
+font-size: 100px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: uppercase;
+}
+.slash{
+    width: 3.371px;
+height: 70.01px;
+transform: rotate(3deg);
+flex-shrink: 0;
+background: white;
+margin-left: 10px;
+margin-top: 30px;
+}
+.section_third_line{
+    display: flex;
+    color: #FFF;
+    font-family: Involve;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.section_a{
+    width: 248px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #2272D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+.thrid_line_p{
+    width: 421px;
+    color: #FFF;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: 0.48px;
+}   
+
+.block{
+    width: 100%;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 40px 40px 0px 0px;
+    background: #F9F9F9;
+    position: absolute;
+    bottom: 0;
+}

@@ -1,0 +1,148 @@
+.modal{
+    height: 100%;
+    width: 100%;
+    background-color: #f9f9f94c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+}
+.modal.active {
+    transform: scale(1);   
+}
+
+.modal_title{
+    color: #333;
+
+    left: 0;
+    align-self: start;
+    font-family: Involve;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 20px;
+}   
+.modal_content{
+    display: flex;
+    flex-direction: column;
+width: 520px;
+height: 484px;
+padding: 40px 60px 37px 60px;
+/* justify-content: center; */
+align-items: center;
+flex-shrink: 0;
+border-radius: 20px;
+background: #FFF;
+}
+.line{
+    
+    width: 400px;
+    height: 1px;
+    background: #626262;
+}
+
+.togglePassword{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.registrationForm{
+    margin-top: 30px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.modal_content input{
+    
+    width: 400px;
+height: 50px;
+flex-shrink: 0;
+border-radius: 20px;
+border: 0.5px solid  #626262;
+background: #FFF;
+padding-left: 30px;
+}
+
+.passwordContainer {
+    position: relative;
+}
+.passwordContainer button{
+    position: absolute; z-index: 2;
+    right: 0;
+    margin-top: 14px;
+    margin-right: 30px;
+}
+.registration_btn{
+    margin-top: 30px;
+    z-index: 3;
+    width: 400px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #333;
+    color: #FFF;
+    font-family: Involve;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.queston_cont{
+    display: flex;
+    width: auto;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.queston_cont_p{
+    color: #333;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.already{
+    color: #2272D4;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+.modal_content_cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.forget_cont{
+    display: flex;
+    gap: 10px;
+    left: 0;
+    align-self: flex-start;
+    margin-top: 16px;
+}
+.forget_cont input{
+    width: 20px;
+    height: 20px;
+}
+.forget_p{
+    align-self: flex-start;
+    margin-top: 15px;
+    color:  #333;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+

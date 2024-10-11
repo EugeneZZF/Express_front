@@ -1,0 +1,8 @@
+.landing_cont{
+    width: 100vw;
+    height: 4769px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    
+}

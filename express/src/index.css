@@ -1,0 +1,248 @@
+@font-face {
+  font-family: 'Halvar Breitschrift';
+  src: url('/public/fonts/HalvarBreit-Blk.eot');
+  src: local('Halvar Breitschrift Black'), local('HalvarBreit-Blk'),
+      url('/public/fonts/HalvarBreit-Blk.eot?#iefix') format('embedded-opentype'),
+      url('/public/fonts/HalvarBreit-Blk.woff2') format('woff2'),
+      url('/public/fonts/HalvarBreit-Blk.woff') format('woff'),
+      url('/public/fonts/HalvarBreit-Blk.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breitschrift';
+  src: url('/public/fonts/HalvarBreit-Lt.eot');
+  src: local('Halvar Breitschrift Light'), local('HalvarBreit-Lt'),
+      url('/public/fonts/HalvarBreit-Lt.eot?#iefix') format('embedded-opentype'),
+      url('/public/fonts/HalvarBreit-Lt.woff2') format('woff2'),
+      url('/public/fonts/HalvarBreit-Lt.woff') format('woff'),
+      url('/public/fonts/HalvarBreit-Lt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breitschrift';
+  src: url('/public/fonts/HalvarBreit-Md.eot');
+  src: local('Halvar Breitschrift Medium'), local('HalvarBreit-Md'),
+      url('/public/fonts/HalvarBreit-Md.eot?#iefix') format('embedded-opentype'),
+      url('/public/fonts/HalvarBreit-Md.woff2') format('woff2'),
+      url('/public/fonts/HalvarBreit-Md.woff') format('woff'),
+      url('/public/fonts/HalvarBreit-Md.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breitschrift';
+  src: url('/public/fonts/HalvarBreit-XBd.eot');
+  src: local('Halvar Breitschrift ExtraBold'), local('HalvarBreit-XBd'),
+      url('/public/fonts/HalvarBreit-XBd.eot?#iefix') format('embedded-opentype'),
+      url('/public/fonts/HalvarBreit-XBd.woff2') format('woff2'),
+      url('/public/fonts/HalvarBreit-XBd.woff') format('woff'),
+      url('/public/fonts/HalvarBreit-XBd.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breitschrift';
+  src: url('/public/fonts/HalvarBreit-Th.eot');
+  src: local('Halvar Breitschrift Thin'), local('HalvarBreit-Th'),
+      url('/public/fonts/HalvarBreit-Th.eot?#iefix') format('embedded-opentype'),
+      url('/public/fonts/HalvarBreit-Th.woff2') format('woff2'),
+      url('/public/fonts/HalvarBreit-Th.woff') format('woff'),
+      url('/public/fonts/HalvarBreit-Th.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breitschrift';
+  src: url('/public/fonts/HalvarBreit-Hl.eot');
+  src: local('Halvar Breitschrift Hairline'), local('HalvarBreit-Hl'),
+      url('/public/fonts/HalvarBreit-Hl.eot?#iefix') format('embedded-opentype'),
+      url('/public/fonts/HalvarBreit-Hl.woff2') format('woff2'),
+      url('/public/fonts/HalvarBreit-Hl.woff') format('woff'),
+      url('/public/fonts/HalvarBreit-Hl.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breitschrift';
+  src: url('/public/fonts/HalvarBreit-Rg.eot');
+  src: local('Halvar Breitschrift Regular'), local('HalvarBreit-Rg'),
+      url('/public/fonts/HalvarBreit-Rg.eot?#iefix') format('embedded-opentype'),
+      url('/public/fonts/HalvarBreit-Rg.woff2') format('woff2'),
+      url('/public/fonts/HalvarBreit-Rg.woff') format('woff'),
+      url('/public/fonts/HalvarBreit-Rg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('/public/fonts/Involve-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('/public/fonts/Involve-BoldOblique.ttf') format('truetype');
+  font-weight: bold;
+  font-style: oblique;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('/public/fonts/Involve-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('/public/fonts/Involve-MediumOblique.ttf') format('truetype');
+  font-weight: 500;
+  font-style: oblique;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('/public/fonts/Involve-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: oblique;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('/public/fonts/Involve-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('/public/fonts/Involve-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('/public/fonts/Involve-SemiBoldOblique.ttf') format('truetype');
+  font-weight: 600;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-UltraBlack.otf') format('opentype');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/public/fonts/Geist-UltraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+html{
+}
+#root{
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

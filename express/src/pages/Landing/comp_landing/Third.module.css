@@ -1,0 +1,265 @@
+.cont{
+    height: 1278px;
+    background: #1C1C1C;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.title_cont{
+    width: 1158px;
+    display: flex;
+    color: #FFF;
+    font-family: "Halvar Breitschrift";
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    gap: 20px;
+}
+.choose{
+    width: 142px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 1px solid #FFF;
+    background: #1C1C1C;
+    color: #FFF;
+    text-align: center;
+    font-family: Involve;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stokes_cont{
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+.stokes_1{
+    width: 517px;
+    height: 169px;
+    flex-shrink: 0;
+}
+.stokes_2{
+    width: 520.001px;
+    height: 169px;
+    
+    flex-shrink: 0;
+}
+.stokes_cont_title{
+    display: flex;
+    width: 1200px;
+    margin-top: 45px;   
+    color: #FFF;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: 0.48px;
+    gap: 81px;
+}
+
+.stokes_cont_title_p_1{
+    width: 244px;
+    height: 65px;
+    flex-shrink: 0;
+}
+.stokes_cont_title_p_2{
+    width: 270px;
+    height: 70px;
+    flex-shrink: 0;
+}
+.stokes_cont_title_p_3{
+    width: 209px;
+height: 65px;
+flex-shrink: 0;
+}
+.stokes_cont_title_p_4{
+    width: 229px;
+    height: 65px;
+    flex-shrink: 0;
+}
+.accordion {
+    width: 1300px;
+    margin: 0 auto;
+    background-color: #111;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .accordionItem {
+    border-bottom: 1px solid #909090;;
+  }
+  .top_accordionitem{
+    border-top:  1px solid #909090;;;
+  }
+  .accordionTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 94px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: #1c1c1c;
+    transition: background-color 0.3s ease;
+    color: #fff;
+    font-family: "Halvar Breitschrift";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22px; /* 110% */
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+  
+  .accordionItem_cont {
+    display: flex;
+    width: 567px;
+    justify-content: space-between;
+  }
+  
+  .accordionTitle:hover {
+    background-color: #222;
+  }
+  
+  .accordionTitle h2 {
+    margin: 0;
+    color: #0066cc;
+  }
+  
+  .accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 20px;
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: end;
+    color: #fff;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: 0.48px;
+    
+  }
+  .content_cont{
+    width: 569px;
+    height: 53px;
+    color: #FFF;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: 0.48px;
+  }
+  
+  .accordionContent.active {
+    max-height: 200px; /* Adjust according to the content */
+    padding: 20px;
+  }
+  
+  .h2 {
+    color: #1764db;
+    font-family: "Halvar Breitschrift";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  
+  .accordion_arrow {
+    transition: transform 0.5s ease;
+  }
+  
+  .rotate {
+    transform: rotate(180deg);
+  }
+  
+
+  .accordion_top_cont{
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 350px;
+    padding-bottom: 30px;
+    margin-top: 70px;
+  }
+  .order_cont{
+    display: inline-flex;
+    height: 50px;
+    padding: 14px 43px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 0.5px solid #909090;;
+    background: #1C1C1C;
+    color: #FFF;
+    text-align: center;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    
+  }
+  .accordion_top_cont_h1{
+    color: #FFF;
+    font-family: "Halvar Breitschrift";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .write_btn{
+    width: 248px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #2272D4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    
+    margin-top: 50px;
+  }
+  .write_btn_p{
+    color: #FFF;
+    font-family: Involve;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .line{
+    width: 100%;
+    height: 70px;
+    flex-shrink: 0;
+
+    border-radius: 40px 40px 0px 0px;
+    background: #F9F9F9;
+    position: absolute;
+    bottom: 0;
+  }

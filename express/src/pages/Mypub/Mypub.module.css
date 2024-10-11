@@ -1,0 +1,168 @@
+.cont{
+    flex: 1;
+    margin-top: 40px;
+    width: 1300px;
+    height: auto;
+    /* min-height: 300px; */
+}
+.archive{
+    width: 1300px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid #E2E2E2;
+    background: #FFF;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    
+    margin-bottom: 50px;
+}
+
+.first_lint{
+    display: flex;
+    justify-content: space-between;
+}
+.first_line_h1{
+    color:  #333;
+    font-family: Involve;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.first_line_end_cont{
+    width: 330px;
+    display: flex;
+    text-wrap: nowrap;
+}
+.checkbox_cont{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+
+    color: #626262;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.inst{
+    margin-left: 50px;
+}
+
+.second_line_title{
+    color: #333;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    display: flex;
+    margin-top: 37px;
+    padding-bottom: 15px;
+}
+
+.second_line_p_1{
+
+}
+.second_line_p_2{
+    margin-left: 253px;
+}
+.second_line_p_3{
+    margin-left: 68px;
+}
+.second_line_p_4{
+    margin-left: 50px;
+}
+.second_line_p_5{
+    margin-left: 75px;
+}
+
+.second_line_p_6{
+    margin-left: 104px;
+}
+.second_line_p_7{
+    margin-left: 141px;
+}
+
+
+
+.card{
+    padding-left: 30px;
+    display: flex;
+    width: 1220px;
+    height: 82px;
+
+    align-items: center;
+
+    color: #333;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    
+    
+}
+.card_btn{
+    width: 108px;
+    height: 22.55px;
+    flex-shrink: 0;
+}
+.checbox_cont_card{
+    margin-top: 3px;
+}
+
+.card_name{
+    margin-left: 10px;
+    width: 226px;
+}
+.card_sum{
+    width: 70px;
+    margin-left: 55px;
+}
+
+.card_data{
+    margin-left: 48px;
+    width: 98px;
+}
+.card_res{
+    margin-left: 60px;
+    width: 100px;
+}
+.card_id{
+    margin-left: 46px;
+    width: 75px;
+}
+.status_cont{
+    margin-left: 60px;
+}
+.card_btn{
+    margin-left: 160px;
+}
+
+.load_more{
+    margin-top: 20px;
+    width: 1300px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 0.5px solid  #6A6A6A;
+    background: var(--icon-color, #FFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  #6A6A6A;
+    font-family: Involve;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 90px;
+}

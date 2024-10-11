@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package result;
+
+message Response {
+  // статус true false
+  bool status = 1;
+  // если false, Тут ошибка
+  string message = 2;
+}

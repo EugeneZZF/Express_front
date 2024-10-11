@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+import "result.proto";
+
+package client_service;
+option csharp_namespace = "ClientServiceProto";
+
+service  CoreClientService {
+  // регистрация пользователя, в ответ придет JWT токен
+  rpc Registration (AuthRequest) returns (AuthResponse) {}
+  
+  // авторизация пользователя, в ответ придет JWT Токен
+  rpc Login (AuthRequest) returns (AuthResponse) {}
+  
+  // смена фио телефона и пароля
+  rpc UpdateProfile(UpdateProfileRequest) returns (result.Response) {}
+  
+}
+
+message AuthRequest {
+  // почта
+  string email = 1;
+  // пароль
+  string password = 2;
+}
+
+message AuthResponse {
+  // токен
+  optional string token = 1;
+  result.Response response = 2;
+}
+
+message UpdateProfileRequest {
+  optional string fio = 1;
+  optional string phone = 2;
+  optional string password = 3;
+}
