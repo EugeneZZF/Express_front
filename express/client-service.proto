@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "result.proto";
+import "google/protobuf/empty.proto";
 
 package client_service;
 option csharp_namespace = "ClientServiceProto";
@@ -14,6 +15,9 @@ service  CoreClientService {
   
   // смена фио телефона и пароля
   rpc UpdateProfile(UpdateProfileRequest) returns (result.Response) {}
+  
+  // удаление профиля
+  rpc RemoveProfile(google.protobuf.Empty) returns (result.Response) {}
   
 }
 

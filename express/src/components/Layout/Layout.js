@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Layout.module.css'
 import { Link, Outlet } from 'react-router-dom'
 import { useState } from 'react';
+import { CoreClientServiceClient , AuthRequest } from '../../generated/client-service_grpc_web_pb';
 
 export default function Layout() {
   const [selectedOption, setSelectedOption] = useState('');
@@ -13,6 +14,10 @@ export default function Layout() {
     const handleOptionChange = (event) => {
       setSelectedOption(event.target.value);
     };
+
+
+
+    const client = new CoreClientServiceClient('https://core.prexpress.pro/', null, null);
 
   return (
     <>

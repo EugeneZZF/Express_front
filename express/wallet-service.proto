@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+import "result.proto";
+import "google/protobuf/empty.proto";
+
+package wallet_service;
+option csharp_namespace = "WalletServiceProto";
+
+service CoreWalletService {
+  // создать кошелек 
+  rpc CreateWallet (CreateWalletRequest) returns (WalletResponse) {}
+  
+  // получить кошельки пользователя
+  rpc GetWallets (google.protobuf.Empty) returns (WalletListResponse) {}
+  
+  rpc RemoveWallet (RemoveWalletRequest) returns (result.Response) {}
+}
+
+message CreateWalletRequest {
+  string address = 1;
+  string token = 2;
+  string login = 3;
+  string password = 4;
+}
+
+message RemoveWalletRequest {
+  string walletId = 1;
+}
+
+message WalletResponse {
+  // кошелек
+  optional Wallet wallet = 1;
+  result.Response response = 2;
+}
+
+message Wallet {
+  string walletId = 1;
+  string address = 2;
+  string token = 3;
+  string login = 4;
+  string password = 5;
+}
+
+message WalletListResponse {
+  repeated Wallet wallets = 1;
+  result.Response response = 2;
+}

@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import styles from "./Mains.module.css";
-import Checkbox from "../Landing/comp_landing/Checkbox";
-import DoubleRangeSlider from "../../components/elements/DoubleRangeSlider";
-// import {CoreCategoryServiceClient , CreateUpdateResourceRequest} from '../../generated/category_grpc_web_pb';
-import ReactSlider from "react-slider";
+import styles from "./Catalog.module.css";
+import Checkbox from "../../Landing/comp_landing/Checkbox";
 
-export default function Mains() {
-  // const clientResurse = new CoreCategoryServiceClient('https://core.prexpress.pro/', null, null);
-  const [value, setValue] = React.useState([25, 50]);
+export default function Catalog() {
   const cardData = {
     name_card: "Название",
     category: "Новости",
@@ -15,6 +10,7 @@ export default function Mains() {
     link: "http://example.com",
     status: 1,
   };
+
   const [priceRange, setPriceRange] = useState([10, 100000]);
   const [checkboxes, setCheckboxes] = useState({
     all: false,
@@ -30,7 +26,9 @@ export default function Mains() {
       id: index,
     }))
   );
+
   const [visibleCards, setVisibleCards] = useState(10);
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
 
   const handleShowMore = () => {
     setVisibleCards((prev) => prev + 10);
@@ -58,11 +56,15 @@ export default function Mains() {
     }));
   };
 
+  const toggleCategoryOpen = () => {
+    setIsCategoryOpen(!isCategoryOpen);
+  };
+
   return (
     <div className={styles.cont}>
       <div className={styles.catalog}>
         <div className={styles.title_catalog}>
-          <p>Добавить новый ресурс</p>
+          <p>Выбор языка</p>
           <img src="/images/Resources/plus.svg" alt="plus icon" />
         </div>
         <div className={styles.line_1}></div>
@@ -104,139 +106,62 @@ export default function Mains() {
             </label>
           </div>
         </div>
-        <div className={styles.name_res}>
-          <p className={styles.name_p}>Укажите название ресурса</p>
-          <input
-            className={styles.name_input}
-            placeholder="Название ресурса"
-          ></input>
-        </div>
-        <div className={styles.link_site}>
-          <p className={styles.lint_p}>Ссылка на сайт</p>
-          <input
-            className={styles.name_input}
-            placeholder="www.fgima.ru"
-          ></input>
-        </div>
-        <div className={styles.discription_site}>
-          <p className={styles.lint_p}>Описание сайта</p>
-          <textarea
-            className={styles.name_textarea}
-            placeholder="Сайт у НВС отличный"
-          ></textarea>
-        </div>
-        <div className={styles.choose_wallet}>
-          <p className={styles.lint_p}>Выбор кошелька для оплаты</p>
-          <select className={styles.wallet_select}>
-            <option className={styles.options} value="usdt_trc20">
-              USDT TRC-20
-            </option>
-            <option className={styles.options} value="btc">
-              Bitcoin
-            </option>
-            <option className={styles.options} value="eth">
-              Ethereum
-            </option>
-            <option className={styles.options} value="usdt_erc20">
-              USDT ERC-20
-            </option>
-          </select>
-        </div>
-        <div className={styles.stoim}>
-          <p className={styles.lint_p}>Желаемая стоимость публикации</p>
-          {/* <div className={styles.input_cont_soim}>
-            <input className={styles.input_soim} placeholder="от 10$"></input>
-            <input
-              className={styles.input_soim}
-              placeholder="до 100000$"
-            ></input>
-          </div> */}
-          {/* <ReactSlider
-            value={value}
-            onBeforeChange={(value, index) =>
-              console.log(`onBeforeChange: ${JSON.stringify({ value, index })}`)
-            }
-            onChange={(value, index) =>
-              console.log(`onChange: ${JSON.stringify({ value, index })}`)
-            }
-            onAfterChange={(value, index) =>
-              console.log(`onAfterChange: ${JSON.stringify({ value, index })}`)
-            }
-            className={styles.horizontalSlider}
-            thumbClassName={styles.exampleThumb}
-            trackClassName={styles.exampleTrack}
-            renderThumb={(props, state) => (
-              <div {...props}>{state.valueNow}</div>
-            )}
-          /> */}
-          <div className={styles.double_cont}>
-            <DoubleRangeSlider></DoubleRangeSlider>
-          </div>
-        </div>
-        <form>
-          <div className={styles.link_site}>
-            <p className={styles.lint_p}>Токен</p>
-            <input
-              type="text"
-              className={styles.name_input}
-              placeholder="Токен"
-            />
-          </div>
-          <div className={styles.link_site}>
-            <p className={styles.lint_p}>Логин</p>
-            <input
-              type="text"
-              className={styles.name_input}
-              placeholder="Логин"
-            />
-          </div>
-          <div className={styles.link_site}>
-            <p className={styles.lint_p}>Пароль</p>
-            <input
-              type="password"
-              className={styles.name_input}
-              placeholder="Пароль"
-            />
-          </div>
-          <button type="submit" className={styles.sinh_btn}>
-            Синхронизация
-          </button>
-        </form>
+
         <div className={styles.category_choose}>
-          <p className={styles.category_p}>Выберите категории</p>
-          <div className={styles.Checkbox_cnt}>
-            <Checkbox checked={checkboxes.all} onChange={handleAllChange} />
-            <span onClick={handleAllChange}>Выбрать все</span>
+          <div className={styles.category_cont}>
+            <p className={styles.category_p} onClick={toggleCategoryOpen}>
+              Выбор категории{" "}
+              {isCategoryOpen ? (
+                <img
+                  className={`${styles.arrow} ${styles.open}`}
+                  src="\images\Catalog\arrow.svg"
+                />
+              ) : (
+                <img className={styles.arrow} src="\images\Catalog\arrow.svg" />
+              )}
+            </p>
           </div>
-          <div className={styles.Checkbox_cnt}>
-            <Checkbox
-              checked={checkboxes.category1}
-              onChange={() => handleCheckboxChange("category1")}
-            />
-            <span>Категория такая-то</span>
-          </div>
-          <div className={styles.Checkbox_cnt}>
-            <Checkbox
-              checked={checkboxes.category2}
-              onChange={() => handleCheckboxChange("category2")}
-            />
-            <span>Категория такая-то</span>
-          </div>
-          <div className={styles.Checkbox_cnt}>
-            <Checkbox
-              checked={checkboxes.category3}
-              onChange={() => handleCheckboxChange("category3")}
-            />
-            <span>Категория такая-то</span>
-          </div>
-          <div className={styles.Checkbox_cnt}>
-            <Checkbox
-              checked={checkboxes.category4}
-              onChange={() => handleCheckboxChange("category4")}
-            />
-            <span>Категория такая-то</span>
+          <div className={styles.category_line}></div>
+          <div
+            className={`${styles.category_list} ${
+              isCategoryOpen ? styles.open : ""
+            }`}
+          >
+            <div className={styles.Checkbox_cnt}>
+              <Checkbox checked={checkboxes.all} onChange={handleAllChange} />
+              <span onClick={handleAllChange}>Выбрать все</span>
+            </div>
+            <div className={styles.Checkbox_cnt}>
+              <Checkbox
+                checked={checkboxes.category1}
+                onChange={() => handleCheckboxChange("category1")}
+              />
+              <span>Категория такая-то</span>
+            </div>
+            <div className={styles.Checkbox_cnt}>
+              <Checkbox
+                checked={checkboxes.category2}
+                onChange={() => handleCheckboxChange("category2")}
+              />
+              <span>Категория такая-то</span>
+            </div>
+            <div className={styles.Checkbox_cnt}>
+              <Checkbox
+                checked={checkboxes.category3}
+                onChange={() => handleCheckboxChange("category3")}
+              />
+              <span>Категория такая-то, в две строки</span>
+            </div>
+            <div className={styles.Checkbox_cnt}>
+              <Checkbox
+                checked={checkboxes.category4}
+                onChange={() => handleCheckboxChange("category4")}
+              />
+              <span>Категория такая-то</span>
+            </div>
           </div>
         </div>
+
         <button className={styles.add_btn}>Добавить ресурс</button>
       </div>
       <div className={styles.right_side}>

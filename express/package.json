@@ -3,14 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@grpc/grpc-js": "^1.12.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
     "google-protobuf": "^3.21.4",
     "grpc-tools": "^1.12.4",
+    "grpc-web": "^1.5.0",
+    "https-browserify": "^1.0.0",
     "i18next": "^23.15.1",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.1",
+    "net": "^1.0.2",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "protobufjs": "^7.4.0",
     "quill-emoji": "^0.2.0",
     "rc-slider": "^11.1.6",
     "react": "^18.3.1",
@@ -19,14 +30,20 @@
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
+    "react-slider": "^2.0.6",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "styled-components": "^6.1.13",
+    "url": "^0.11.4",
+    "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile-proto": "protoc --proto_path=src/grpc/proto --js_out=import_style=commonjs,binary:src/generated --grpc_out=grpc_js:src/generated --plugin=protoc-gen-grpc=./node_modules/.bin/grpc_tools_node_protoc_plugin src/grpc/proto/client-service.proto"
+    "proto:js": "pbjs -t static-module -w commonjs -o ./src/proto_bundle.js ./proto/*.proto && pbts -o ./src/proto_bundle.d.ts ./src/proto_bundle.js"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +64,23 @@
     ]
   },
   "devDependencies": {
-    "grpc_tools_node_protoc_ts": "^5.3.3"
+    "@babel/core": "^7.25.8",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.25.8",
+    "@babel/preset-react": "^7.25.7",
+    "babel-loader": "^9.2.1",
+    "grpc_tools_node_protoc_ts": "^5.3.3",
+    "node-polyfill-webpack-plugin": "^4.0.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "browser": {
+    "http2": false,
+    "fs": false,
+    "path": false,
+    "os": false,
+    "net": false,
+    "tls": false
   }
 }

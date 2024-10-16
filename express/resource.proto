@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+import "result.proto";
+import "category.proto";
+
+package resource_service;
+option csharp_namespace = "ResourceServiceProto";
+
+service CoreResourceService {
+  rpc CreateResource (CreateUpdateResourceRequest) returns (CreateUpdateResourceResponse) {}
+}
+
+message Resource {
+  string resourceId = 1;
+  // наименование ресурса
+  string name = 2;
+  // описание
+  optional string description = 3;
+  // язык
+  Language language = 4;
+  // ссылка
+  string uri = 5;
+  // логин
+  string login = 6;
+  // пароль
+  string password = 7;
+  // decimal цена, разделитель запятая 
+  string price = 8;
+  // id кошелька
+  string walletId = 9;
+  // wp категории
+  repeated category_service.WpCategory categories = 10;
+}
+
+message CreateUpdateResourceRequest {
+  // наименование ресурса
+  string name = 1;
+  // описание
+  optional string description = 2;
+  // язык
+  Language language = 3;
+  // ссылка
+  string uri = 4;
+  // логин
+  string login = 5;
+  // пароль
+  string password = 6;
+  // decimal цена, разделитель запятая 
+  string price = 7;
+  // id кошелька
+  string walletId = 8;
+  // wp категории
+  repeated category_service.WpCategory categories = 9;
+  
+}
+
+message CreateUpdateResourceResponse {
+  optional Resource resource = 1;
+  result.Response response = 2;
+}
+
+enum Language {
+    Russian = 0;
+    English = 1;
+}

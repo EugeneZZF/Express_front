@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './Modal.module.css';
 import Checkbox from './Checkbox';
+//
+
+import { CoreClientServiceClient , AuthRequest} from '../../../generated/client-service_grpc_web_pb';
 
 export default function Modal({ activeModal, setActiveModal, isLogin, setIsLogin }) {
+    
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
     const [email, setEmail] = useState('');
@@ -14,7 +18,97 @@ export default function Modal({ activeModal, setActiveModal, isLogin, setIsLogin
     const { uuid } = useParams();
     const navigate = useNavigate();
 
+
+
+
+    const client = new CoreClientServiceClient('https://core.prexpress.pro/', null, null);
+
+
+
+    
+    const handleRegistration = async (e) => {
+        e.preventDefault();
+        const inputErrors = validateInputs();
+    
+        if (Object.keys(inputErrors).length === 0) {
+            try {
+                const request = new AuthRequest();
+                request.setEmail(email);
+                request.setPassword(password);
+    
+                
+                const response = await new Promise((resolve, reject) => {
+                    client.registration(request, {}, (err, response) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(response);
+                        }
+                    });
+                });
+    
+               
+                const responseObject = response.toObject ? response.toObject() : response;
+                console.log("Registration successful:", responseObject);
+                if(responseObject.response.status == true){
+                    localStorage.setItem('tokenKey', responseObject.token);
+                    navigate('/settings');
+                }
+    
+            } catch (err) {
+                console.error(`Registration failed: ${err.message}`);
+            }
+        } else {
+            setErrors(inputErrors);
+        }
+    };
+
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        const inputErrors = validateInputs();
+
+        if(Object.keys(inputErrors).length === 0){
+            try {
+                const request = new AuthRequest();
+                request.setEmail(email);
+                request.setPassword(password);
+
+                const response = await new Promise((resolve, reject) => {
+                    client.login(request, {}, (err, response) =>{
+                        if(err){
+                            reject(err);
+                        } else {
+                            resolve(response);
+                        }
+                    });
+                }
+                )
+                const responseObject = response.toObject ? response.toObject() : response;
+                console.log("Login successful: ", responseObject);
+                if(responseObject.response.status == true){
+                    // console.log(responseObject.token)
+                    localStorage.setItem('tokenKey', responseObject.token);
+                    navigate('/settings');
+                }                
+            } catch(err){
+                console.log(`Login failed : ${err.message} `);
+            }
+        } else {
+            setErrors(inputErrors);
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     const token = localStorage.getItem('token');
+    
+    
 
     const togglePasswordVisibility = (setType) => {
         setType(prevState => !prevState);
@@ -28,69 +122,14 @@ export default function Modal({ activeModal, setActiveModal, isLogin, setIsLogin
         return newErrors;
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const newErrors = validateInputs();
-        setErrors(newErrors);
 
-        if (Object.keys(newErrors).length > 0) {
-            return;
-        }
 
-        try {
-            const url = isLogin ?
-                'https://api.prexpress.pro/Auth/Login' :
-                'https://api.prexpress.pro/Auth/Registration';
+    
 
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await response.json();
-            if (response.ok) {
-                console.log(data); // Выводим в консоль полученный ответ
-                alert(isLogin ? "Login successful." : "Registration successful. Please check your email to confirm your registration.");
-                if (isLogin) {
-                    localStorage.setItem('token', data.data.token);
-                    setIsLogin(true);
-                    navigate('/catalog');
-                }
-            } else {
-                setErrors(data.errors || { form: data.title || "Something went wrong." });
-            }
-        } catch (error) {
-            alert("An error occurred. Please try again.");
-        }
-    };
-
-    const handleEmailConfirmation = async (userId) => {
-        try {
-            const response = await fetch(`https://api.prexpress.pro/Auth/Confirm/${userId}`, {
-                method: 'GET',
-            });
-
-            const data = await response.json();
-            if (response.ok) {
-                setMessage("Email confirmed successfully. You can now login.");
-                console.log(`Server response: ${JSON.stringify(data)}`);
-            } else {
-                setErrors(data.errors || { form: data.title || "Something went wrong." });
-                alert(`Error: ${data.title || "Something went wrong."}`);
-            }
-        } catch (error) {
-            alert("An error occurred. Please try again.");
-        }
-    };
-
-    useEffect(() => {
-        if (uuid) {
-            handleEmailConfirmation(uuid);
-        }
-    }, [uuid]);
+    
+    
+    
+    
 
     return (
         <div className={`${activeModal ? styles.active : ''} ${styles.modal}`} onClick={() => setActiveModal(false)}>
@@ -101,7 +140,7 @@ export default function Modal({ activeModal, setActiveModal, isLogin, setIsLogin
                     <div className={styles.modal_content_cont}>
                         <h1 className={styles.modal_title}>Вход</h1>
                         <div className={styles.line}></div>
-                        <form className={styles.registrationForm} onSubmit={handleSubmit}>
+                        <form className={styles.registrationForm}  onSubmit={handleLogin}>
                             <div className={styles.inputContainer}>
                                 <input 
                                     className={styles.input_email}
@@ -112,7 +151,7 @@ export default function Modal({ activeModal, setActiveModal, isLogin, setIsLogin
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
-                                {errors.email && <div className={styles.error}>{errors.email}</div>}
+                                {/* {errors.email && <div className={styles.error}>{errors.email}</div>} */}
                             </div>
                             <div className={styles.inputContainer}>
                                 <div className={styles.passwordContainer}>
@@ -142,7 +181,7 @@ export default function Modal({ activeModal, setActiveModal, isLogin, setIsLogin
                         </div>
                         <div className={styles.queston_cont}>
                             <p className={styles.queston_cont_p}>Нет учётной записи?</p>
-                            <button className={styles.already} onClick={() => setIsLogin(false)}>Регистрация</button>
+                            <button className={styles.already} >Регистрация</button>
                         </div>
                     </div>
                 </div>
@@ -150,7 +189,7 @@ export default function Modal({ activeModal, setActiveModal, isLogin, setIsLogin
                 <div className={styles.modal_content} onClick={e => e.stopPropagation()}>
                     <h1 className={styles.modal_title}>Регистрация</h1>
                     <div className={styles.line}></div>
-                    <form className={styles.registrationForm} onSubmit={handleSubmit}>
+                    <form className={styles.registrationForm} onSubmit={handleRegistration} >
                         <div className={styles.inputContainer}>
                             <input 
                                 className={styles.input_email}
