@@ -28,9 +28,7 @@ const StyledTrack = styled.div`
   border-radius: 999px;
 `;
 
-export default function DoubleRangeSlider() {
-  const [value, setValue] = React.useState([10, 10000]);
-
+export default function DoubleRangeSlider({ value, min, max, setValue }) {
   const handleInputChange = (index, newValue) => {
     const updatedValue = [...value];
     updatedValue[index] = newValue;
@@ -72,15 +70,12 @@ export default function DoubleRangeSlider() {
       <StyledSlider
         className={styles.horizontalSlider}
         value={value}
-        min={0}
-        max={100000}
+        min={min}
+        max={max}
         onBeforeChange={(value, index) =>
           console.log(`onBeforeChange: ${JSON.stringify({ value, index })}`)
         }
         onChange={(newValue, index) => {
-          console.log(
-            `onChange: ${JSON.stringify({ value: newValue, index })}`
-          );
           setValue(newValue);
         }}
         onAfterChange={(value, index) =>

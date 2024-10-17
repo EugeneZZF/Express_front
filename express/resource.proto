@@ -7,7 +7,11 @@ package resource_service;
 option csharp_namespace = "ResourceServiceProto";
 
 service CoreResourceService {
-  rpc CreateResource (CreateUpdateResourceRequest) returns (CreateUpdateResourceResponse) {}
+  rpc CreateResource (CreateResourceRequest) returns (CreateUpdateResourceResponse) {}
+  
+  rpc UpdateResource (Resource) returns (result.Response) {}
+  
+  rpc DeleteResource (DeleteResourceRequest) returns (result.Response) {}
 }
 
 message Resource {
@@ -32,7 +36,7 @@ message Resource {
   repeated category_service.WpCategory categories = 10;
 }
 
-message CreateUpdateResourceRequest {
+message CreateResourceRequest {
   // наименование ресурса
   string name = 1;
   // описание
@@ -51,7 +55,6 @@ message CreateUpdateResourceRequest {
   string walletId = 8;
   // wp категории
   repeated category_service.WpCategory categories = 9;
-  
 }
 
 message CreateUpdateResourceResponse {
@@ -62,4 +65,8 @@ message CreateUpdateResourceResponse {
 enum Language {
     Russian = 0;
     English = 1;
+}
+
+message DeleteResourceRequest {
+  string resourceId = 1;
 }

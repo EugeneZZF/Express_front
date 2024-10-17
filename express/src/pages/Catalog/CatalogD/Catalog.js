@@ -3,6 +3,9 @@ import styles from "./Catalog.module.css";
 import Checkbox from "../../Landing/comp_landing/Checkbox";
 
 export default function Catalog() {
+  const [value, setValue] = useState([10, 10000]);
+  const min = 0;
+  const max = 100000;
   const cardData = {
     name_card: "Название",
     category: "Новости",

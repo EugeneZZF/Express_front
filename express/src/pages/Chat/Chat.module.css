@@ -1,0 +1,161 @@
+.cont {
+  flex: 1;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user_info {
+  width: 640px;
+  height: 514px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.user_info_first_line {
+  color: #333;
+  font-family: Involve;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.user_line {
+  width: 560px;
+  height: 0.5px;
+  background: #626262;
+}
+
+.user_full {
+  display: flex;
+  gap: 170px;
+  margin-bottom: 30px;
+}
+.full_title {
+  color: #333;
+  font-family: Involve;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.user_name {
+  color: #333;
+  font-family: Involve;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.full_cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+.statistic_info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.statistic_left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.statistic {
+  margin-top: 40px;
+  display: flex;
+  gap: 80px;
+}
+
+.chat {
+  width: 640px;
+  height: 514px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  padding-left: 40px;
+  padding-top: 30px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.header_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+.chat_title {
+  color: #333;
+  font-family: Involve;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.chat_data {
+  color: #333;
+  font-family: Involve;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.line_header {
+  width: 560px;
+  height: 0.5px;
+  background: #626262;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.chat_data {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.chat_messages {
+  height: 322px;
+}
+
+.input_cont {
+  width: 560px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 0.5px solid #626262;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+  bottom: 0;
+}
+.message_sen {
+  background-size: cover; /* Покроет весь блок картинкой */
+  background-position: center; /* Центрирование картинки */
+  background-repeat: no-repeat; /* Запрет повторения картинки */
+  background-image: url("../../../public/images/Chat/sendico.svg");
+  width: 24px;
+  height: 24px;
+}
+
+.input_message:focus {
+  border: none;
+}
